@@ -32,7 +32,13 @@ export function AnimatedTabs({
             aria-selected={activeTab === tab.id}
             role="tab"
           >
-            {Icon && <Icon className={styles.icon} aria-hidden="true" />}
+            {Icon && (
+              <Icon
+                className={styles.icon}
+                aria-hidden="true"
+                style={{ color: "var(--color-foreground)" }}
+              />
+            )}
             <span className={styles.text}>{tab.label}</span>
           </button>
         );

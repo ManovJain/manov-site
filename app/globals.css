@@ -96,6 +96,9 @@ html {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Prevent horizontal scroll */
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -103,6 +106,47 @@ body {
   background-color: var(--color-background);
   color: var(--color-foreground);
   transition: var(--transition-default);
+  margin: 0;
+  padding: 0;
+  /* Prevent any unwanted scrolling */
+  width: 100%;
+  min-height: 100dvh; /* Use dynamic viewport height for mobile */
+  overflow-x: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Use dynamic viewport height */
+  min-height: 100dvh;
+  /* Contain the content width */
+  width: 100%;
+  max-width: 100%;
+  /* Only show scrollbar if absolutely needed */
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* Add padding to prevent content touching edges */
+  padding: 0 max(1rem, env(safe-area-inset-left));
+  /* Account for mobile notches and home indicators */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  /* Ensure padding is included in total width */
+  box-sizing: border-box;
+}
+
+/* Ensure all content respects container bounds */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Make images and media responsive */
+img,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Ensure Satoshi is applied to all text elements */
