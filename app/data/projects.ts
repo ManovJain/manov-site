@@ -8,7 +8,7 @@ export const projects: Project[] = [
     description: "AI-crafted recipes for your health and happiness.",
     icon: ChefHat,
     svgPath: "/assets/anim_logo.svg",
-    demoUrl: "https://example.com/office-demo",
+    demoUrl: "https://www.anim.so/",
     colors: {
       light: {
         primary: "#3E721D",
@@ -26,7 +26,7 @@ export const projects: Project[] = [
     description: "Discover what’s in season, wherever you are.",
     icon: Cherry,
     svgPath: "/assets/inSZN_logo.svg",
-    demoUrl: "https://example.com/edutech-demo",
+    demoUrl: "https://www.in-szn.com/",
     colors: {
       light: {
         // primary: "#FC321A",
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     description: "Seamless habit tracking, synced with Notion and iOS.",
     icon: CalendarCheck,
     svgPath: "/assets/NiOS_logo.svg",
-    demoUrl: "https://example.com/garden-demo",
+    demoUrl: "https://www.nios.so/",
     colors: {
       light: {
         primary: "#000000",

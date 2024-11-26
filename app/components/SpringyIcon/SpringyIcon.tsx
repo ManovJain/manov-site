@@ -12,6 +12,8 @@ interface SpringyIconProps {
   label: string;
   tooltip: string;
   hoverColor: string;
+  target?: string;
+  rel?: string;
 }
 
 export function SpringyIcon({
@@ -20,12 +22,14 @@ export function SpringyIcon({
   label,
   tooltip,
   hoverColor,
+  target,
+  rel,
 }: SpringyIconProps) {
   return (
     <Tooltip.Provider>
       <Tooltip.Root>
         <Tooltip.Trigger asChild>
-          <Link href={href} className={styles.link}>
+          <Link href={href} className={styles.link} target={target} rel={rel}>
             <motion.div
               whileHover={{ scale: 1.2, color: hoverColor }}
               whileTap={{ scale: 0.9 }}
