@@ -13,10 +13,6 @@
   transition: var(--transition-default);
 }
 
-.name:hover {
-  color: var(--color-primary);
-}
-
 .links {
   display: flex;
   gap: var(--spacing-4);
