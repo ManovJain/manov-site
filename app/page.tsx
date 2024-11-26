@@ -1,95 +1,132 @@
+import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import {
+  Mail,
+  Twitter,
+  Github,
+  MapPin,
+  GraduationCap,
+  Globe,
+} from "lucide-react";
+
 import styles from "./page.module.css";
+import { SpringyIcon } from "./components/SpringyIcon/SpringyIcon";
+import { ThemeToggle } from "./components/ThemeToggle/ThemeToggle";
+import { ProjectShowcase } from "./components/ProjectShowcase/ProjectShowcase";
 
-export default function Home() {
+export default function Page() {
   return (
-    <div className={styles.page}>
+    <div className={styles.container}>
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+        {/* HEADER NAV */}
+        <nav className={styles.nav}>
+          <div className={styles.name}>Manov Jain</div>
+          <div className={styles.links}>
+            <Link href="/" className={styles.link}>
+              photos
+            </Link>
+            <Link href="/" className={styles.link}>
+              blog
+            </Link>
+            <ThemeToggle />
+          </div>
+        </nav>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+        {/* MAIN CONTENT */}
+        <div>
+          <Image
+            src="/manov.png"
+            alt="Profile Picture"
+            width={100}
+            height={100}
+            className={styles.avatar}
+          />
+          <div className={styles.bio}>
+            {/* <h1 className={styles.greeting}>Hi, I'm Manov</h1> */}
+            <p className={styles.description}>
+              I&apos;m a software engineer and designer based in Seattle.
+              Currently building anim, feast, and making products at AT&T.
+            </p>
+          </div>
         </div>
+
+        {/* WORK */}
+        <div className={styles.work}>
+          <h2 className={styles.sectionTitle}>Work</h2>
+          <div className={styles.workHistory}>
+            {[
+              {
+                company: "AT&T",
+                position: "Senior Software Engineer",
+                period: "2022—Present",
+                icon: Globe,
+                url: "https://www.att.com/",
+              },
+              {
+                company: "Southern Methodist University",
+                position: "Computer Science & Film",
+                period: "2018—2022",
+                icon: GraduationCap,
+                url: "https://www.smu.edu/",
+              },
+            ].map((job, index) => (
+              <div key={index} className={styles.workItem}>
+                <div className={styles.workInfo}>
+                  <div className={styles.company}>{job.company}</div>
+                  <div className={styles.position}>{job.position}</div>
+                </div>
+                <div className={styles.workMeta}>
+                  <div className={styles.period}>{job.period}</div>
+                  <SpringyIcon
+                    href={job.url}
+                    icon={<job.icon className={styles.icon} />}
+                    label={`Visit ${job.company}`}
+                    tooltip={`Visit ${job.company}`}
+                    hoverColor="var(--color-primary)"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className={styles.projects}>
+          <h2 className={styles.sectionTitle}>Featured Projects</h2>
+          <ProjectShowcase />
+        </div>
+
+        {/* FOOTER */}
+        <footer className={styles.footer}>
+          <div className={styles.location}>
+            <MapPin className={styles.icon} />
+            Seattle, WA
+          </div>
+          <div className={styles.socialLinks}>
+            <SpringyIcon
+              href="mailto:manovjain@gmail.com"
+              icon={<Mail className={styles.icon} />}
+              label="Email"
+              tooltip="Send me an email"
+              hoverColor="#EA4335"
+            />
+            <SpringyIcon
+              href="https://x.com/ManovJain"
+              icon={<Twitter className={styles.icon} />}
+              label="Twitter"
+              tooltip="Follow me on Twitter"
+              hoverColor="#1DA1F2"
+            />
+            <SpringyIcon
+              href="https://github.com/ManovJain"
+              icon={<Github className={styles.icon} />}
+              label="GitHub"
+              tooltip="Check out my GitHub projects"
+              hoverColor="#6e5494"
+            />
+          </div>
+        </footer>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }

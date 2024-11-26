@@ -1,0 +1,46 @@
+.tabsContainer {
+  display: flex;
+  gap: 16px;
+  border-radius: 12px;
+}
+
+.tabItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: var(--color-background);
+  border-radius: 8px;
+  cursor: pointer;
+  width: fit-content;
+  transition: all 0.3s ease;
+  border: none;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tabItem:hover,
+.tabItem.active {
+  width: auto;
+}
+
+.tabItem .text {
+  font-size: 16px;
+  color: var(--color-muted-foreground);
+  opacity: 0;
+  max-width: 0;
+  transition: all 0.3s ease;
+}
+
+.tabItem:hover .text,
+.tabItem.active .text {
+  opacity: 1;
+  max-width: 100px;
+  margin-left: 4px;
+}
+
+.tabItem .icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}

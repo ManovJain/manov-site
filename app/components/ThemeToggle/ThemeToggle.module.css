@@ -1,0 +1,29 @@
+.toggle {
+  padding: var(--spacing-2);
+  border-radius: var(--border-radius-full);
+  color: var(--color-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-default);
+}
+
+.toggle:hover {
+  color: var(--color-foreground);
+}
+
+:global(.light) .toggle:hover {
+  color: #ffd700;
+  background-color: rgba(255, 215, 0, 0.1);
+}
+
+:global(.dark) .toggle:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.icon {
+  height: 1.2rem;
+  width: 1.2rem;
+  transition: var(--transition-default);
+}
