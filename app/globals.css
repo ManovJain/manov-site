@@ -76,6 +76,10 @@
 
   /* Transitions */
   --transition-default: all 0.2s ease-in-out;
+
+  /* Root level containment */
+  --page-max-width: min(100vw - 2rem, 1200px);
+  --safe-padding: max(1rem, env(safe-area-inset-left, 1rem));
 }
 
 .dark {
@@ -91,14 +95,22 @@
   --color-border: #374151;
 }
 
-/* Base styles */
-html {
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* Prevent horizontal scroll */
+/* Update viewport settings */
+@viewport {
+  width: device-width;
+  initial-scale: 1;
+}
+
+/* Update base container styles */
+html,
+body {
   width: 100%;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  /* Prevent bounce scroll on iOS */
+  overscroll-behavior: none;
 }
 
 body {
@@ -106,32 +118,28 @@ body {
   background-color: var(--color-background);
   color: var(--color-foreground);
   transition: var(--transition-default);
-  margin: 0;
-  padding: 0;
-  /* Prevent any unwanted scrolling */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
   width: 100%;
-  min-height: 100dvh; /* Use dynamic viewport height for mobile */
+  min-height: 100dvh;
   overflow-x: hidden;
+  /* Prevent iOS text inflation */
+  -webkit-text-size-adjust: 100%;
 }
 
 main {
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: var(--safe-padding);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* Use dynamic viewport height */
-  min-height: 100dvh;
-  /* Contain the content width */
-  width: 100%;
-  max-width: 100%;
-  /* Only show scrollbar if absolutely needed */
-  overflow-y: auto;
-  overflow-x: hidden;
-  /* Add padding to prevent content touching edges */
-  padding: 0 max(1rem, env(safe-area-inset-left));
-  /* Account for mobile notches and home indicators */
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
-  /* Ensure padding is included in total width */
+  /* Remove fixed height to prevent scroll */
+  min-height: calc(
+    100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)
+  );
   box-sizing: border-box;
 }
 
