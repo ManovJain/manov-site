@@ -2,39 +2,95 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-8);
-  margin-bottom: var(--spacing-16);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.showcaseWrapper {
+  position: relative;
+  min-height: 300px;
 }
 
 .showcase {
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--border-radius-lg);
-  aspect-ratio: 16 / 9;
-  background-color: var(--color-muted);
-}
-
-.image {
-  object-fit: cover;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
   display: flex;
-  align-items: flex-end;
-  padding: var(--spacing-6);
+  align-items: center;
+  gap: var(--spacing-8);
+  padding: var(--spacing-8);
+  background-color: var(--color-background);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
 }
 
-.projectInfo {
-  color: white;
+.iconWrapper {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+}
+
+.content {
+  flex: 1;
 }
 
 .title {
-  font-size: var(--font-size-xl);
-  font-weight: 600;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-4);
+  color: var(--color-foreground);
 }
 
 .description {
-  margin-top: var(--spacing-2);
+  font-size: var(--font-size-lg);
+  color: var(--color-muted-foreground);
+  margin-bottom: var(--spacing-6);
+  line-height: 1.6;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-3) var(--spacing-6);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.primaryButton {
+  color: var(--color-background);
+}
+
+.primaryButton:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+  background-color: transparent;
+  border: 2px solid;
+}
+
+.secondaryButton:hover {
+  background-color: var(--hover-color);
+  color: var(--color-background);
+  transform: translateY(-2px);
 }
