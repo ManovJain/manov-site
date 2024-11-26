@@ -23,12 +23,12 @@ export default function Page() {
         <nav className={styles.nav}>
           <div className={styles.name}>Manov Jain</div>
           <div className={styles.links}>
-            <Link href="/" className={styles.link}>
+            {/* <Link href="/" className={styles.link}>
               photos
             </Link>
             <Link href="/" className={styles.link}>
               blog
-            </Link>
+            </Link> */}
             <ThemeToggle />
           </div>
         </nav>
@@ -45,15 +45,21 @@ export default function Page() {
           <div className={styles.bio}>
             {/* <h1 className={styles.greeting}>Hi, I'm Manov</h1> */}
             <p className={styles.description}>
-              I&apos;m a software engineer and designer based in Seattle.
-              Currently building anim, feast, and making products at AT&T.
+              I&apos;m a software engineer based in Seattle. Currently building
+              anim, feast, and making products at AT&T.
             </p>
           </div>
         </div>
 
+        {/* PROJECTS */}
+        <div className={styles.projects}>
+          <h2 className={styles.sectionTitle}>Featured Projects</h2>
+          <ProjectShowcase />
+        </div>
+
         {/* WORK */}
         <div className={styles.work}>
-          <h2 className={styles.sectionTitle}>Work</h2>
+          {/* <h2 className={styles.sectionTitle}>Work</h2> */}
           <div className={styles.workHistory}>
             {[
               {
@@ -89,11 +95,6 @@ export default function Page() {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className={styles.projects}>
-          <h2 className={styles.sectionTitle}>Featured Projects</h2>
-          <ProjectShowcase />
         </div>
 
         {/* FOOTER */}
