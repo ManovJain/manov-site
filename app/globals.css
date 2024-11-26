@@ -1,8 +1,6 @@
 @font-face {
   font-family: "Satoshi";
-  src: url("/fonts/Satoshi-Variable.woff2") format("woff2"),
-    url("/fonts/Satoshi-Variable.woff") format("woff"),
-    url("/fonts/Satoshi-Variable.ttf") format("truetype");
+  src: url("/fonts/Satoshi-Variable.ttf") format("truetype");
   font-weight: 300 900;
   font-display: swap;
   font-style: normal;
@@ -10,15 +8,15 @@
 
 @font-face {
   font-family: "Satoshi";
-  src: url("/fonts/Satoshi-VariableItalic.woff2") format("woff2"),
-    url("/fonts/Satoshi-VariableItalic.woff") format("woff"),
-    url("/fonts/Satoshi-VariableItalic.ttf") format("truetype");
+  src: url("/fonts/Satoshi-VariableItalic.ttf") format("truetype");
   font-weight: 300 900;
   font-display: swap;
   font-style: italic;
 }
 
 :root {
+  color-scheme: light;
+
   /* Colors */
   --color-primary: #3b82f6;
   --color-secondary: #10b981;
@@ -81,6 +79,8 @@
 }
 
 .dark {
+  color-scheme: dark;
+
   --color-primary: #60a5fa;
   --color-secondary: #34d399;
   --color-accent: #a78bfa;

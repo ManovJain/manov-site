@@ -7,29 +7,34 @@ import styles from "./AnimatedTabs.module.css";
 interface AnimatedTabsProps {
   activeTab: string;
   onTabChange: (tabId: string) => void;
+  tabs: { id: string; label: string }[];
 }
 
-export function AnimatedTabs({ activeTab, onTabChange }: AnimatedTabsProps) {
+export function AnimatedTabs({
+  activeTab,
+  onTabChange,
+  tabs,
+}: AnimatedTabsProps) {
   const handleTabClick = (tabId: string) => {
     onTabChange(tabId);
   };
 
   return (
     <div className={styles.tabsContainer}>
-      {projects.map((project) => {
-        const Icon = project.icon;
+      {tabs.map((tab) => {
+        const Icon = projects.find((project) => project.id === tab.id)?.icon;
         return (
           <button
-            key={project.id}
+            key={tab.id}
             className={`${styles.tabItem} ${
-              activeTab === project.id ? styles.active : ""
+              activeTab === tab.id ? styles.active : ""
             }`}
-            onClick={() => handleTabClick(project.id)}
-            aria-selected={activeTab === project.id}
+            onClick={() => handleTabClick(tab.id)}
+            aria-selected={activeTab === tab.id}
             role="tab"
           >
-            <Icon className={styles.icon} aria-hidden="true" />
-            <span className={styles.text}>{project.title}</span>
+            {Icon && <Icon className={styles.icon} aria-hidden="true" />}
+            <span className={styles.text}>{tab.label}</span>
           </button>
         );
       })}

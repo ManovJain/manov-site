@@ -8,7 +8,13 @@ export interface Project {
   svgPath: string;
   demoUrl: string;
   colors: {
-    primary: string;
-    secondary: string;
+    light: {
+      primary: string;
+      secondary: string;
+    };
+    dark: {
+      primary: string;
+      secondary: string;
+    };
   };
 }

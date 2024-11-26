@@ -10,8 +10,14 @@ export const projects: Project[] = [
     svgPath: "/assets/anim_logo.svg",
     demoUrl: "https://example.com/office-demo",
     colors: {
-      primary: "#A6D388",
-      secondary: "#333333",
+      light: {
+        primary: "#3E721D",
+        secondary: "#3E721D",
+      },
+      dark: {
+        primary: "#A6D388",
+        secondary: "#A6D388",
+      },
     },
   },
   {
@@ -22,8 +28,16 @@ export const projects: Project[] = [
     svgPath: "/assets/inSZN_logo.svg",
     demoUrl: "https://example.com/edutech-demo",
     colors: {
-      primary: "#FC321A",
-      secondary: "#3E721D",
+      light: {
+        // primary: "#FC321A",
+        // secondary: "#FFAF00",
+        primary: "#FFAF00",
+        secondary: "#FC321A",
+      },
+      dark: {
+        primary: "#FC321A",
+        secondary: "#FFAF00",
+      },
     },
   },
   {
@@ -34,8 +48,14 @@ export const projects: Project[] = [
     svgPath: "/assets/NiOS_logo.svg",
     demoUrl: "https://example.com/garden-demo",
     colors: {
-      primary: "#FFFFFF",
-      secondary: "#FFFFFF",
+      light: {
+        primary: "#000000",
+        secondary: "#000000",
+      },
+      dark: {
+        primary: "#FFFFFF",
+        secondary: "#FFFFFF",
+      },
     },
   },
 ];
