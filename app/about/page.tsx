@@ -25,10 +25,10 @@ export default function Page() {
             className={styles.avatar}
           />
           <div className={styles.bio}>
-            {/* <h1 className={styles.greeting}>Hi, I'm Manov</h1> */}
+            <h1 className={styles.greeting}>Hi, I&apos;m Manov</h1>
             <p className={styles.description}>
-              I&apos;m a software engineer based in Seattle. Currently building
-              anim, feast, and making products at AT&T.
+              I&apos;m a software engineer based in Seattle. I like to build web
+              & iOS apps. Want to work together? Reach out via the links below.
             </p>
           </div>
         </div>

@@ -13,8 +13,7 @@ export default function Page() {
         {/* MAIN CONTENT */}
         <div className={styles.bio}>
           <p className={styles.description}>
-            I&apos;m a software engineer based in Seattle. Currently building
-            anim, feast, and making products at AT&T.
+            Hi, welcome to my website. I like to build cool shit.
           </p>
         </div>
 
