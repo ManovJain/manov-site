@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { Providers } from "./providers";
+import { Analytics } from "@vercel/analytics/react";
 
 const satoshi = localFont({
   src: "./fonts/Satoshi-Variable.ttf",
@@ -80,6 +81,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={satoshi.variable}>
         <Providers>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   );
