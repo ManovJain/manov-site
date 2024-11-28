@@ -11,6 +11,9 @@ export function Nav() {
         Manov Jain
       </Link>
       <div className={styles.links}>
+        <Link href="/art" className={styles.link}>
+          art
+        </Link>
         <Link href="/about" className={styles.link}>
           about
         </Link>

@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import { ProjectShowcase } from "./components/ProjectShowcase/ProjectShowcase";
 import { Nav } from "./components/Nav/Nav";
 import { Footer } from "./components/Footer/Footer";
+import AnimatedGrid from "./components/AnimatedGrid/AnimatedGrid";
 
 export default function Page() {
   return (
@@ -18,9 +19,14 @@ export default function Page() {
         </div>
 
         {/* PROJECTS */}
-        <div className={styles.projects}>
-          <h2 className={styles.sectionTitle}>Featured Projects</h2>
+        <div className={styles.section}>
+          {/* <h2 className={styles.sectionTitle}>Featured Projects</h2> */}
           <ProjectShowcase />
+        </div>
+
+        {/* ANIMATED GRID */}
+        <div className={styles.section}>
+          <AnimatedGrid />
         </div>
 
         <Footer />

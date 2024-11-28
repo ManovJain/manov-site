@@ -4,7 +4,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-8);
+  gap: var(--spacing-4);
   padding: 0 var(--safe-padding);
   box-sizing: border-box;
 }
@@ -23,6 +23,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  gap: var(--spacing-4);
 }
 
 /* BIO */
@@ -30,8 +31,8 @@
 .bio {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-4);
-  margin: var(--spacing-4) 0;
+  gap: var(--spacing-2);
+  margin: var(--spacing-2) 0;
 }
 
 .description {
@@ -39,4 +40,18 @@
   color: var(--color-foreground);
   line-height: var(--line-height-md);
   max-width: 34rem;
+}
+
+/* SECTIONS */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--color-foreground);
+  margin: 0;
 }

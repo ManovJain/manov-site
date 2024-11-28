@@ -43,7 +43,7 @@ export const projects: Project[] = [
   {
     id: "nios",
     title: "NiOS",
-    description: "Seamless habit tracking, synced with Notion and iOS.",
+    description: "Seamless habit tracking with Notion and iOS.",
     icon: CalendarCheck,
     svgPath: "/assets/NiOS_logo.svg",
     demoUrl: "https://www.nios.so/",
