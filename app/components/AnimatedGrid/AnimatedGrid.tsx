@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import styles from "./animatedGrid.module.css";
+import styles from "./AnimatedGrid.module.css";
 
 interface Point {
   x: number;

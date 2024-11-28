@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import styles from "./particleFlow.module.css";
+import styles from "./ParticleFlow.module.css";
 
 interface Particle {
   x: number;
